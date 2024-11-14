@@ -207,9 +207,6 @@ vim.keymap.set('t', '<leader>tt', '<cmd>ToggleTerm size=30<CR>', { desc = 'Toggl
 -- buffers
 vim.keymap.set('n', '<leader>x', '<cmd>bd<CR>', { desc = 'Delete buffer' })
 
--- table-mode toggle
-vim.keymap.set('n', '<leader>tm', '<cmd>TableModeToggle<CR>', { desc = 'Toggle table mode' })
-
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
