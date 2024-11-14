@@ -128,6 +128,9 @@ end)
 -- Enable break indent
 vim.opt.breakindent = true
 
+-- set foldmethod
+vim.opt.foldmethod = 'indent'
+
 -- Save undo history
 vim.opt.undofile = true
 
