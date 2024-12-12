@@ -45,13 +45,25 @@ return {
         desc = 'Debug: Set Breakpoint',
       },
       -- Toggle to see last session result. Without this, you can't see session output in case of unhandled exception.
-      { '<F7>', dapui.toggle, desc = 'Debug: See last session result.' },
+      -- { '<F7>', dapui.toggle, desc = 'Debug: See last session result.' },
       unpack(keys),
     }
   end,
   config = function()
     local dap = require 'dap'
     local dapui = require 'dapui'
+    dap.configurations.go = {
+      {
+        type = 'go',
+        name = 'Debug package with Arguments',
+        request = 'launch',
+        program = '${fileDirname}',
+        args = function()
+          local input = vim.fn.input 'Enter Arguments: '
+          return vim.split(input, ' ')
+        end,
+      },
+    }
 
     require('mason-nvim-dap').setup {
       -- Makes a best effort to setup the various debuggers with
